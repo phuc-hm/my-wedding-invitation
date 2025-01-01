@@ -12,7 +12,7 @@
 * ======================================================= */
 body {
   font-family: "Work Sans", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.7;
   color: #828282;
@@ -1007,6 +1007,30 @@ form label {
   font-size: 12px;
   /* words */
 }
+
+@media screen and (max-width: 480px) {
+  .simply-countdown > .simply-section {
+    /* coutndown blocks */
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+  }
+  .simply-countdown > .simply-section > div {
+    /* countdown block inner div */
+    height: 70px;
+    width: 70px;
+  }
+  .simply-countdown > .simply-section .simply-amount {
+    font-size: 20px;
+    /* amounts */
+  }
+  .simply-countdown > .simply-section .simply-word {
+    font-size: 10px;
+    /* words */
+  }
+  
+}
+
 
 #fh5co-testimonial,
 #fh5co-services,
