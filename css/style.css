@@ -229,6 +229,16 @@ h1, h2, h3, h4, h5, h6, figure {
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
+  background: darkred;
+}
+
+#fh5co-counter .fh5co-heading span,
+#fh5co-event .fh5co-heading span {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 
 .fh5co-bg {
@@ -371,10 +381,12 @@ h1, h2, h3, h4, h5, h6, figure {
   align-items: center;
 }
 #fh5co-counter .fh5co-heading h2,
+#fh5co-gallery .fh5co-heading h2,
 #fh5co-event .fh5co-heading h2 {
   color: #fff;
 }
 #fh5co-counter .fh5co-heading span,
+#fh5co-gallery .fh5co-heading span,
 #fh5co-event .fh5co-heading span {
   color: rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
@@ -1136,7 +1148,7 @@ form label {
 }
 
 .fh5co-section-gray {
-  background: rgba(0, 0, 0, 0.04);
+  background: darkred;
 }
 
 .couple-wrap {
@@ -1185,7 +1197,7 @@ form label {
 }
 .couple-half h3 {
   font-family: 'Great Vibes', cursive;
-  color: #F14E95;
+  color: darkred;
   font-size: 30px;
 }
 .couple-half .groom, .couple-half .bride {
@@ -1300,7 +1312,7 @@ form label {
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
-  color: #F14E95;
+  color: darkred;
   font-family: 'Great Vibes', cursive;
 }
 @media screen and (max-width: 768px) {
@@ -1965,6 +1977,7 @@ form label {
   align-items: center;
 }
 
-.fh5co-bg p{
-  color: #c6c6c6 !important;
+#fh5co-gallery .fh5co-heading p,
+#fh5co-event .fh5co-heading p{
+  color: #c6c6c6;
 }
