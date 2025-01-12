@@ -257,7 +257,6 @@
 
 	    const handleOverlayClick = () => {
 	        overlayTop.classList.add('slide-up');
-	        overlayContent.classList.add('slide-up');
 	        overlayBottom.classList.add('slide-down');
 	        setTimeout(() => {
 	            overlayCover.style.display = 'none';
