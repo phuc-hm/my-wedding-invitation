@@ -246,9 +246,11 @@
 	        if (isPlaying) {
 	            backgroundMusic.pause();
 	            playPauseBtn.innerHTML = '<i class="icon-play"></i>';
+	            playPauseBtn.classList.remove('playing');
 	        } else {
 	            backgroundMusic.play();
 	            playPauseBtn.innerHTML = '<i class="icon-pause"></i>';
+	            playPauseBtn.classList.add('playing');
 	        }
 	        isPlaying = !isPlaying;
 	    };
@@ -276,6 +278,7 @@
 	            if (!isPlaying) {
 	                backgroundMusic.play();
 	                playPauseBtn.innerHTML = '<i class="icon-pause"></i>';
+	                playPauseBtn.classList.add('playing');
 	                isPlaying = true;
 	            }
 	        }, { once: true });

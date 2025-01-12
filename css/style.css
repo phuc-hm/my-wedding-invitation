@@ -1999,6 +1999,7 @@ form label {
   cursor: pointer;
   z-index: 1000;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.284); /* White shadow */
 }
 
 .play-pause-btn:hover {
@@ -2021,12 +2022,16 @@ form label {
   left: 0;
 }
 
+.play-pause-btn.playing {
+  animation: pulse 1s infinite;
+}
+
 .notification {
   position: fixed;
   bottom: 20px;
   left: 80px; /* Adjusted to be right next to the button */
   font-size: 17px;
-  z-index: 1000;
+  z-index: 999; /* Lower z-index than play button */
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
   color: #FFFFFF;
