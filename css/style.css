@@ -2123,6 +2123,10 @@ form label {
 	cursor: pointer;
   z-index: 2003; /* Ensure it appears on top of the overlay */
 	transition: transform 0.3s ease, background-color 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .overlay-content:hover {
