@@ -47,13 +47,13 @@ body {
 }
 
 a {
-  color: #F14E95;
+  color: #ffffff;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #F14E95;
+  color: #ffffff;
   outline: none;
   text-decoration: none;
 }
@@ -70,18 +70,18 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 ::-webkit-selection {
-  color: #fff;
-  background: #F14E95;
+  color: rgb(255, 255, 255);
+  background: darkred;
 }
 
 ::-moz-selection {
-  color: #fff;
-  background: #F14E95;
+  color: rgb(255, 255, 255);
+  background: darkred;
 }
 
 ::selection {
-  color: #fff;
-  background: #F14E95;
+  color: rgb(255, 255, 255);
+  background: rgb(94, 0, 0);
 }
 
 .fh5co-nav {
@@ -1980,4 +1980,176 @@ form label {
 #fh5co-gallery .fh5co-heading p,
 #fh5co-event .fh5co-heading p{
   color: #c6c6c6;
+}
+
+.play-pause-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(139, 0, 0, 0.542);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.play-pause-btn:hover {
+  transform: scale(1.1);
+  background-color: rgba(139, 0, 0, 0.542);
+}
+
+.play-pause-btn i {
+  position: relative;
+  left: 3px;
+}
+
+.play-pause-btn i.icon-play {
+  position: relative;
+  left: 3px;
+}
+
+.play-pause-btn i.icon-pause {
+  position: relative;
+  left: 0;
+}
+
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 80px; /* Adjusted to be right next to the button */
+  font-size: 17px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  color: #FFFFFF;
+  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, darkred 0px 0px 20px, darkred 0px 0px 30px, darkred 0px 0px 40px, darkred 0px 0px 50px, darkred 0px 0px 75px, 2px 2px 20px rgba(255,45,149,0), 2px 2px 20px rgba(255,45,149,0), 2px 2px 20px rgba(255,45,149,0);
+  background: rgba(139, 0, 0, 0.542);
+  padding: 10px 20px;
+  height: 50px; /* Same height as play button */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-top-right-radius: 25px; /* Make right side round */
+  border-bottom-right-radius: 25px; /* Make right side round */
+  transform: translateX(-50px); /* Start off-screen */
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateX(0); /* Slide to the right */
+}
+
+.overlay-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.overlay-bottom {
+	position: fixed;
+	top: 40%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(81, 0, 0);
+	z-index: 2000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  transition: transform 2s ease;
+}
+
+.overlay-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2001;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  transition: transform 2s ease;
+}
+
+.overlay-layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	background: rgb(126, 0, 0);
+  clip-path: polygon(0% 0%,
+                    100% 0%,
+                    100% 40%,
+                    50% 55%,
+                    0% 40%);
+  z-index: 2002;
+}
+
+.overlay-content {
+	text-align: center;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 300px;
+	background-color: darkred;
+	border-radius: 50%;
+	cursor: pointer;
+  z-index: 2003; /* Ensure it appears on top of the overlay */
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.overlay-content:hover {
+	transform: scale(1.1);
+	background-color: #a00000;
+}
+
+.overlay-content h2 {
+  font-family: 'Great Vibes', cursive;
+  color: #fff;
+	font-size: 75px;
+  margin-bottom: -10px;
+}
+@media screen and (max-width: 768px) {
+  .overlay-content {
+    width: 200px;
+    height: 200px;
+  
+  }
+  .overlay-content h2 {
+    font-size: 45px;
+  }
+}
+
+.overlay-content .btn {
+	display: none; /* Hide the button element */
+}
+
+.slide-up {
+	transform: translateY(-100%);
+}
+
+.slide-down {
+	transform: translateY(100%);
 }

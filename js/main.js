@@ -226,7 +226,71 @@
 		loaderPage();
 		counter();
 		counterWayPoint();
+		// Force scroll to top after reload
+		$(window).on('beforeunload', function() {
+			$(window).scrollTop(0);
+		});
 	});
 
+	document.addEventListener('DOMContentLoaded', function() {
+	    const playPauseBtn = document.getElementById('playPauseBtn');
+	    const backgroundMusic = document.getElementById('backgroundMusic');
+	    const notification = document.getElementById('notification');
+	    const overlayCover = document.getElementById('overlay-cover');
+	    const overlayTop = document.querySelector('.overlay-top');
+	    const overlayBottom = document.querySelector('.overlay-bottom');
+	    const overlayContent = document.querySelector('.overlay-content');
+	    let isPlaying = false;
+
+	    const handlePlayPause = () => {
+	        if (isPlaying) {
+	            backgroundMusic.pause();
+	            playPauseBtn.innerHTML = '<i class="icon-play"></i>';
+	        } else {
+	            backgroundMusic.play();
+	            playPauseBtn.innerHTML = '<i class="icon-pause"></i>';
+	        }
+	        isPlaying = !isPlaying;
+	    };
+
+	    const handleOverlayClick = () => {
+	        overlayTop.classList.add('slide-up');
+	        overlayContent.classList.add('slide-up');
+	        overlayBottom.classList.add('slide-down');
+	        setTimeout(() => {
+	            overlayCover.style.display = 'none';
+	            document.body.style.overflow = 'auto';
+	            // Show notification for the first 5 seconds after overlay is disabled
+	            notification.classList.add('show');
+	            setTimeout(() => {
+	                notification.classList.remove('show');
+	            }, 5000);
+	        }, 2000); // Match the duration of the CSS animation
+	    };
+
+	    const initPlayPauseButton = () => {
+	        playPauseBtn.addEventListener('click', handlePlayPause);
+
+	        // Play music after first user scroll
+	        window.addEventListener('click', function() {
+	            if (!isPlaying) {
+	                backgroundMusic.play();
+	                playPauseBtn.innerHTML = '<i class="icon-pause"></i>';
+	                isPlaying = true;
+	            }
+	        }, { once: true });
+	    };
+
+	    const initOverlay = () => {
+	        // Block scrolling while overlay is active
+	        document.body.style.overflow = 'hidden';
+
+	        // Remove overlay and unblock scrolling after user clicks anywhere on the overlay
+	        overlayCover.addEventListener('click', handleOverlayClick);
+	    };
+
+	    initPlayPauseButton();
+	    initOverlay();
+	});
 
 }());
