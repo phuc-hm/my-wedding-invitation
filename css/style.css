@@ -1692,13 +1692,10 @@ form label {
   width: 50px;
   height: 50px;
   display: table;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(87, 0, 0, 0.542);
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 50%; /* Make the button round */
 }
 .gototop a i {
   height: 50px;
@@ -2029,7 +2026,7 @@ form label {
   left: 20px;
   width: 50px;
   height: 50px;
-  background: rgba(139, 0, 0, 0.542);
+  background: rgba(87, 0, 0, 0.542);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -2040,7 +2037,6 @@ form label {
   cursor: pointer;
   z-index: 1000;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.284); /* White shadow */
 }
 
 .play-pause-btn:hover {
@@ -2071,14 +2067,13 @@ form label {
   position: fixed;
   bottom: 20px;
   left: 80px; /* Adjusted to be right next to the button */
-  font-size: 17px;
+  font-size: 14px;
   z-index: 999; /* Lower z-index than play button */
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
   color: #FFFFFF;
-  text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, darkred 0px 0px 20px, darkred 0px 0px 30px, darkred 0px 0px 40px, darkred 0px 0px 50px, darkred 0px 0px 75px, 2px 2px 20px rgba(255,45,149,0), 2px 2px 20px rgba(255,45,149,0), 2px 2px 20px rgba(255,45,149,0);
-  background: rgba(139, 0, 0, 0.542);
-  padding: 10px 20px;
+  background: rgba(87, 0, 0, 0.542);
+  padding: 13px 20px;
   height: 50px; /* Same height as play button */
   display: flex;
   justify-content: center; /* Center horizontally */
