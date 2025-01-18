@@ -2206,3 +2206,57 @@ form label {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+#wd-thankyou {
+  height: 900px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: center !important;
+  width: 100%;
+}
+#wd-thankyou .overlay {
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+#wd-thankyou > .container {
+  position: relative;
+  z-index: 10;
+}
+#wd-thankyou .display-t,
+#wd-thankyou .display-tc {
+  height: 900px;
+  display: table;
+  width: 100%;
+}
+#wd-thankyou .display-tc {
+  display: table-cell !important;
+  vertical-align: middle;
+  text-align: center;
+}
+#wd-thankyou .display-tc h1 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 60px;
+  line-height: 1.5;
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  #wd-thankyou {
+    height: 600px;
+  }
+  #wd-thankyou .display-t,
+  #wd-thankyou .display-tc {
+    height: 600px;
+  }
+  #wd-thankyou .display-tc h1 {
+    font-size: 30px;
+  }
+}

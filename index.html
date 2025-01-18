@@ -44,6 +44,19 @@
 	<div class="wd-loader"></div>
 
 	<div id="page">
+		
+		<div id="overlay-cover" class="overlay-cover">
+			<div class="overlay-top">
+				<div class="overlay-layer">
+				</div>
+				<div class="overlay-content">
+					<h2>Thiệp mời</h2>
+				</div>
+			</div>
+			<div class="overlay-bottom">
+			</div>
+		</div>
+
 		<nav class="wd-nav" role="navigation">
 			<div class="container">
 				<div class="row">
@@ -289,23 +302,24 @@
 			</div>
 		</div>
 
-		<button class="play-pause-btn" id="playPauseBtn">
-			<i class="icon-play"></i>
-		</button>
-		<div class="notification" id="notification">Chọn để dừng phát nhạc</div>
-		<audio id="backgroundMusic" src="music/bg_music.mp3" controls="controls" loop="" autoplay="autoplay"
-			style="display: none;">
-		</audio>
+		<div class="music-player">
+			<button class="play-pause-btn" id="playPauseBtn">
+				<i class="icon-play"></i>
+			</button>
+			<div class="notification" id="notification">Chọn để dừng phát nhạc</div>
+			<audio id="backgroundMusic" src="music/bg_music.mp3" controls="controls" loop="" autoplay="autoplay"
+				style="display: none;">
+			</audio>
+		</div>
 
-		<div id="overlay-cover" class="overlay-cover">
-			<div class="overlay-top">
-				<div class="overlay-layer">
+		<div id="wd-thankyou" class="wd-thankyou" style="background-image:url(images/img_bg_3.jpg);">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="display-t">
+					<div class="display-tc">
+						<h1>Cảm ơn bạn vì đã là một phần trong ngày biệt của chúng tôi!</h1>
+					</div>
 				</div>
-				<div class="overlay-content">
-					<h2>Thiệp mời</h2>
-				</div>
-			</div>
-			<div class="overlay-bottom">
 			</div>
 		</div>
 
