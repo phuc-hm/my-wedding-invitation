@@ -224,6 +224,31 @@
 		$(window).stellar();
 	};
 
+	function createConfetti() {
+		const confettiContainer = document.createElement('div');
+		confettiContainer.classList.add('confetti-container');
+		document.body.appendChild(confettiContainer);
+
+		const colors = ['#f14e95', '#ff6b6b', '#f0ad4e', '#5bc0de', '#5cb85c', 'darkred'];
+		const shapes = ['circle', 'square', 'triangle', 'rectangle', 'double-happiness'];
+		const rectangleSizes = ['size1', 'size2', 'size3', 'size4'];
+		for (let i = 0; i < 30; i++) {
+			const confetti = document.createElement('div');
+			confetti.classList.add('confetti');
+			confetti.style.left = `${Math.random() * 100}vw`;
+			confetti.style.animationDelay = `${Math.random() * 20}s`;
+			confetti.style.animationDuration = `${5 + Math.random() * 5}s`;
+			confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+			confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+			const shape = shapes[Math.floor(Math.random() * shapes.length)];
+			confetti.classList.add(shape);
+			if (shape === 'rectangle') {
+				confetti.classList.add(rectangleSizes[Math.floor(Math.random() * rectangleSizes.length)]);
+			}
+			confetti.style.setProperty('--random-x', `${Math.random() * 20 - 10}`);
+			confettiContainer.appendChild(confetti);
+		}
+	}
 
 	$(function () {
 		mobileMenuOutsideClick();
@@ -278,6 +303,8 @@
 				setTimeout(() => {
 					notification.classList.remove('show');
 				}, 5000);
+				// Create confetti after overlay is clicked
+				createConfetti();
 			}, 2000); // Match the duration of the CSS animation
 		};
 
