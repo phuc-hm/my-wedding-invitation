@@ -232,7 +232,7 @@
 		const colors = ['#f14e95', '#ff6b6b', '#f0ad4e', '#5bc0de', '#5cb85c', 'darkred'];
 		const shapes = ['circle', 'square', 'triangle', 'rectangle', 'double-happiness'];
 		const rectangleSizes = ['size1', 'size2', 'size3', 'size4'];
-		for (let i = 0; i < 30; i++) {
+		for (let i = 0; i < 15; i++) {
 			const confetti = document.createElement('div');
 			confetti.classList.add('confetti');
 			confetti.style.left = `${Math.random() * 100}vw`;
