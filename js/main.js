@@ -236,7 +236,7 @@
 			const confetti = document.createElement('div');
 			confetti.classList.add('confetti');
 			confetti.style.left = `${Math.random() * 100}vw`;
-			confetti.style.animationDelay = `${Math.random() * 20}s`;
+			confetti.style.animationDelay = `${Math.random() * 10}s`;
 			confetti.style.animationDuration = `${5 + Math.random() * 5}s`;
 			confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 			confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
